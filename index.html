@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movie Finder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: #f9f9f9;
+      }
+      header h1 {
+        cursor: pointer;
+        color: #222;
+      }
+      .movie-card {
+        background: #fff;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .movie-card img {
+        height: 100px;
+        border-radius: 4px;
+      }
+      button {
+        padding: 6px 12px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="homeTitle">Movie Finder 🎬</h1>
+    </header>
+
+    <main>
+      <!-- Search Section -->
+      <section id="searchSection">
+        <div id="sortContainer" style="display: none">
+          <label for="sortSelect">Sort by:</label>
+          <select id="sortSelect">
+            <option value="none" selected>Original Order</option>
+            <option value="title-asc">Title (A-Z)</option>
+            <option value="title-desc">Title (Z-A)</option>
+            <option value="year-asc">Year (Oldest to Newest)</option>
+            <option value="year-desc">Year (Newest to Oldest)</option>
+          </select>
+        </div>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for a movie..."
+        />
+        <button id="searchBtn">Search</button>
+        <button id="watchlistToggleBtn">📚 My Watchlist</button>
+        <button id="favoritesToggleBtn">❤️ My Favorites</button>
+        <div id="results"></div>
+      </section>
+
+      <section id="memeSection">
+        <img src="meme.jpg" alt="Pulp Fiction meme" />
+      </section>
+
+      <!-- Watchlist Section -->
+      <section id="watchlistSection" style="display: none">
+        <button id="backToSearchBtn">⬅ Back to Search</button>
+        <h2>My Watchlist</h2>
+        <div id="watchlistContainer"></div>
+      </section>
+
+      <!-- Favorites Section -->
+      <section id="favoritesSection" style="display: none">
+        <button id="backToSearchFromFavBtn">⬅ Back to Search</button>
+        <h2>My Favorites</h2>
+        <div id="favoritesContainer"></div>
+      </section>
+
+      <!-- Movie Detail Section -->
+      <section id="movieDetailSection" style="display: none">
+        <button id="backFromDetailBtn">⬅ Go Back</button>
+        <div id="movieDetailContainer"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
